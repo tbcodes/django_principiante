@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flights Project</title>
+</head>
+<body>
+    <h1>Flights! Main Page!</h1>
+    <!-- Imprimimos los vuelos disponibles -->
+    <ul>
+        {% for flight in flights %}
+            <li>
+                {{ flight }}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <h2>Flights! Clickable links!</h1>
+    <!-- Imprimimos los vuelos disponibles con links clickeables!  -->
+    <ul>
+        {% for flight in flights %}
+            <li>
+                <a href="{% url 'flight' flight.id %}">{{ flight }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+    
+</body>
+</html>
